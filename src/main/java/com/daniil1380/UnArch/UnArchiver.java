@@ -1,5 +1,7 @@
 package com.daniil1380.UnArch;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,7 +14,7 @@ public class UnArchiver {
 
     public UnArchiver(Archives.Archive archive) {
         try {
-            this.output = archive.getDst();
+            this.output = archive.getDst() + "/";
             zipInputStream = new ZipInputStream(new FileInputStream(archive.getSrc()));
         } catch (FileNotFoundException e) {
             System.out.println("Файл  не найден " + archive.getSrc());

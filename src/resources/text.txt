@@ -3,15 +3,15 @@
     "archives": [
         {
             "src":"src/resources/z.zip",
-            "dst":"output/"
+            "dst":"output"
         },
         {
             "src":"src/resources/lab1.zip",
-            "dst":"output/"
+            "dst":"output"
         },
         {
             "src":"src/resources/kod.zip",
-            "dst":"output/"
+            "dst":"output"
         }
     ]
 

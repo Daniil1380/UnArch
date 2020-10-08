@@ -1,9 +1,8 @@
 package com.daniil1380.UnArch;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import org.apache.commons.io.FileUtils;
+
 
 public class JsonFIle {
     private String json;
@@ -15,16 +14,7 @@ public class JsonFIle {
 
     public void loadJson(){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            String line;
-            StringBuilder stringBuilder = new StringBuilder();
-            String ls = System.lineSeparator();
-            while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line).append(ls);
-            }
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-            json = stringBuilder.toString();
-            reader.close();
+            json = FileUtils.readFileToString(new File(fileName));
         } catch (IOException e) {
             System.out.println("JSON-Файл не найден");
         }
