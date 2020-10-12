@@ -1,4 +1,4 @@
-package com.daniil1380.UnArch;
+package main.java.com.daniil1380.UnArch;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
