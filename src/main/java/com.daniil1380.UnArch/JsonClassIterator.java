@@ -1,4 +1,4 @@
-package main.java.com.daniil1380.UnArch;
+package com.daniil1380.UnArch;
 
 public class JsonClassIterator implements ClassIterator{
 

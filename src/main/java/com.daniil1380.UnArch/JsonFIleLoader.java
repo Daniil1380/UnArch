@@ -1,4 +1,4 @@
-package main.java.com.daniil1380.UnArch;
+package com.daniil1380.UnArch;
 
 import java.io.*;
 import org.apache.commons.io.FileUtils;
