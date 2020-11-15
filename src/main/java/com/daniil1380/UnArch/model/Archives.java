@@ -1,4 +1,4 @@
-package com.daniil1380.UnArch;
+package com.daniil1380.UnArch.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Archives {
     private List<Archive> archives;
-
     public List<Archive> getArchives() {
         return archives;
     }

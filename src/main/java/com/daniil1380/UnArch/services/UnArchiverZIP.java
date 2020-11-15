@@ -1,4 +1,6 @@
-package com.daniil1380.UnArch;
+package com.daniil1380.UnArch.services;
+
+import com.daniil1380.UnArch.services.interfaces.UnArchiver;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -7,24 +9,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class UnArchiverZIP implements UnArchiver {
-    private final String input;
-    private final String output;
-
-    public UnArchiverZIP(Archives.Archive archive) {
-        this.output = "/" + archive.getDst() + "/";
-        input = archive.getSrc();
-    }
-
-    public String getOutput() {
-        return output;
-    }
-
-    public String getInputStream() {
-        return input;
-    }
 
     @Override
-    public void unArchive() {
+    public void unArchive(String input, String output) {
+        output = "/" + output + "/";
         try ( ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(input))){
             ZipEntry entry;
             String name;
@@ -58,17 +46,4 @@ public class UnArchiverZIP implements UnArchiver {
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UnArchiverZIP obj = (UnArchiverZIP) o;
-        return input.equals(obj.input) &&
-                output.equals(obj.output);
-    }
-
-    @Override
-    public int hashCode() {
-        return input.hashCode() + output.hashCode();
-    }
 }
